@@ -1,8 +1,15 @@
 source 'https://rubygems.org'
 
 
+
+
+gem 'bootstrap-sass', '~> 3.2.0.2'
+gem 'simple_form', '~> 3.0.2'
+
+#haml is a better way to write templates
+gem 'haml'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.6'
+gem 'rails'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
