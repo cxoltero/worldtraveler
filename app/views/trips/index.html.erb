@@ -1,3 +1,4 @@
+<%=link_to "New Trip", new_trip_path %>
 <% @trips.each do |trip| %>
   <h2><%= link_to trip.title, trip %></h2>
 <% end %>
