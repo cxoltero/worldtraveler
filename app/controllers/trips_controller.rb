@@ -7,7 +7,7 @@ class TripsController < ApplicationController
   end
 
   def new
-    @trip = Trip.new
+    @trip = current_user.trips.build
   end
 
   def show
@@ -15,7 +15,7 @@ class TripsController < ApplicationController
   end
 
  def create
-    @trip = Trip.new(trip_params)
+    @trip = current_user.trips.build(trip_params)
 
     if @trip.save
       redirect_to @trip, notice: "Succesfully Created New Trip"
