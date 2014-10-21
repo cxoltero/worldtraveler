@@ -1,0 +1,10 @@
+<h1><%= @trip.title %></h1>
+
+<p><%= @trip.description %></p>
+
+
+
+<%= link_to "Back", root_path %>
+<%= link_to "Edit", edit_trip_path %>
+<%= link_to "Delete", trip_path, method: :delete, data: {confirm: 'Are you sure?'} %>
+

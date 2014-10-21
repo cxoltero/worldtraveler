@@ -1,9 +1,9 @@
 class TripsController < ApplicationController
-  before_action :find_trip, only: [:show, :edit, :update, :drestroy]
+  before_action :find_trip, only: [:show, :edit, :update, :destroy]
 
 
   def index
-    @trips = Trip.all
+    @trips = Trip.all.order("created_at DESC")
   end
 
   def new
@@ -14,13 +14,7 @@ class TripsController < ApplicationController
 
   end
 
-  def edit
-  end
-
-  def update
-  end
-
-  def create
+ def create
     @trip = Trip.new(trip_params)
 
     if @trip.save
@@ -30,7 +24,22 @@ class TripsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @trip.update(trip_params)
+      redirect_to @trip, notice: "Trip was succesfully updated!"
+    else
+      render 'edit'
+    end
+  end
+
+
+
   def destroy
+    @trip.destroy
+    redirect_to root_path
   end
 
 
