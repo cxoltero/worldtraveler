@@ -1,10 +1,35 @@
-<%= image_tag @trip.image.url(:medium) %>
-<h1><%= @trip.title %></h1>
-<p>Submited By </p>
+<div class="row" id="pin_show">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="panel panel-default">
+      <div class="panel-heading pin_image">
+        <%= image_tag @trip.image.url %>
+      </div>
+      <div class="panel-body">
+        <h1>
+          <%= @trip.title %>
+        </h1>
+        <p class="description">
+          <%= @trip.description %>
+        </p>
+        <p></p>
+        Submited by
 
+      </div>
+      <div class="panel-footer">
+        <div class="row">
+          <div class="col-md-6">
+            <p class="user"></p>
+            Submitted by
 
-
-<%= link_to "Back", root_path %>
-<%= link_to "Edit", edit_trip_path %>
-<%= link_to "Delete", trip_path, method: :delete, data: {confirm: 'Are you sure?'} %>
-
+          </div>
+          <div class="col-md-6">
+            <div class="btn-group pull-right">
+              <%= link_to "Edit", edit_trip_path, class: "btn btn-default" %>
+              <%= link_to "Delete", trip_path, method: :delete, data: {confirm: "Are you sure?"}, class: "btn-btn_default" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
