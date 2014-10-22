@@ -1,6 +1,9 @@
+
 <div class="col-md-6 col-md-offset-3">
 <h1>Edit Trips</h1>
 
+<!--This will show the picture that is being edited -->
+<%= image_tag @trip.image.url(:medium) %>
 <%= render 'form' %>
 
 </div>
