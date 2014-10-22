@@ -1,5 +1,17 @@
-
-<div class="col-md-6 col-md-offset-3">
+<div class="transitions-enabled" id="trips">
+  <% @trips.each do |trip| %>
+    <div class="box panel panel-default">
+      <%= link_to (image_tag trip.image.url), trip %>
+      <h2>
+        <%= link_to trip.title, trip %>
+      </h2>
+      <p class="user">
+        Submitted by
+        <%= trip.user.email %>
+      </p>
+    </div>
+  <% end %>
+</div>
 <h1>Edit Trips</h1>
 
 <!--This will show the picture that is being edited -->
