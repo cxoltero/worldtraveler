@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 
-
+ruby '2.1.2'
 
 gem 'bootstrap-sass', '~> 3.2.0.2'
 gem 'simple_form', '~> 3.0.2'
@@ -30,6 +30,8 @@ gem 'masonry-rails', '~> 0.2.1'
 gem 'pry-byebug', '~> 2.0.0'
 
 gem 'acts_as_votable', '~> 0.10.0'
+
+gem 'rails_12factor', group: :production
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
