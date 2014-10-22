@@ -1,8 +1,8 @@
-<div class="row" id="pin_show">
+<div class="row" id="trip_show">
   <div class="col-md-8 col-md-offset-2">
     <div class="panel panel-default">
-      <div class="panel-heading pin_image">
-        <%= image_tag @trip.image.url %>
+      <div class="panel-heading trip_image">
+        <%= image_tag @trip.image.url(:medium ) %>
       </div>
       <div class="panel-body">
         <h1>
@@ -13,7 +13,7 @@
         </p>
         <p></p>
         Submited by
-
+        <%= @user %>
       </div>
       <div class="panel-footer">
         <div class="row">
@@ -24,8 +24,22 @@
           </div>
           <div class="col-md-6">
             <div class="btn-group pull-right">
-              <%= link_to "Edit", edit_trip_path, class: "btn btn-default" %>
-              <%= link_to "Delete", trip_path, method: :delete, data: {confirm: "Are you sure?"}, class: "btn-btn_default" %>
+              <div class = "btn btn-default">
+                  <%= link_to like_trip_path(@trip), method: :put do %>
+                  <span class="glyphicon glyphicon-heart">
+                      <%= @trip.get_upvotes.size %>
+                       </span>
+                  <% end %>
+              </div>
+
+              <% if user_signed_in? %>
+                <div class = "btn btn-default" >
+                  <%= link_to "Edit", edit_trip_path%>
+                </div>
+                <div class = "btn btn-default" >
+                  <%= link_to "Delete", trip_path, method: :delete, data: {confirm: "Are you sure?"} %>
+                </div>
+              <%end%>
             </div>
           </div>
         </div>

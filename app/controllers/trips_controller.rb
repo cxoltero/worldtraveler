@@ -1,5 +1,8 @@
 class TripsController < ApplicationController
-  before_action :find_trip, only: [:show, :edit, :update, :destroy]
+  #everything that is inside the square brackets will be run first
+  before_action :find_trip, only: [:show, :edit, :update, :destroy, :upvote]
+
+  before_action :authenticate_user!, except: [:index, :show]
 
 
   def index
@@ -40,6 +43,11 @@ class TripsController < ApplicationController
   def destroy
     @trip.destroy
     redirect_to root_path
+  end
+
+  def upvote
+    @trip.upvote_by current_user
+    redirect_to :back
   end
 
 
