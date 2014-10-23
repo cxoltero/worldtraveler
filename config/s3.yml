@@ -1,0 +1,12 @@
+development:
+bucket: cxolteromedia
+access_key_id: AKIAJO6YNMO7COD7K2YA
+secret_access_key: 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
+test:
+bucket: cxolteromedia
+access_key_id: AKIAJO6YNMO7COD7K2YA
+secret_access_key: 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
+production:
+bucket: cxolteromedia
+access_key_id: AKIAJO6YNMO7COD7K2YA
+secret_access_key: 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

@@ -23,6 +23,8 @@ gem 'coffee-rails', '~> 4.0.0'
 
 gem 'devise', '~> 3.4.0'
 
+gem 'aws-sdk'
+
 gem 'paperclip', '~> 4.2.0'
 
 gem 'masonry-rails', '~> 0.2.1'
